@@ -1,0 +1,13 @@
+{
+  "importReact": false,
+  "extensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".customjsx"
+  ],
+  "babelPlugins": [
+    "typescript"
+  ] 
+}

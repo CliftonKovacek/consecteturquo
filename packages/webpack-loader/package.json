@@ -1,0 +1,46 @@
+{
+  "name": "@compiled/webpack-loader",
+  "version": "0.8.0",
+  "description": "A familiar and performant compile time CSS-in-JS library for React.",
+  "homepage": "https://compiledcssinjs.com/docs/pkg-webpack-loader",
+  "bugs": "https://github.com/atlassian-labs/compiled/issues/new?assignees=&labels=bug&template=bug_report.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atlassian-labs/compiled.git",
+    "directory": "packages/webpack-loader"
+  },
+  "license": "Apache-2.0",
+  "author": "Michael Dougall",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "css-loader",
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@compiled/babel-plugin": "^0.12.0",
+    "@compiled/babel-plugin-strip-runtime": "^0.11.4",
+    "@compiled/css": "^0.8.1",
+    "@compiled/react": "0.10.2",
+    "@compiled/utils": "^0.6.14",
+    "enhanced-resolve": "^5.8.3",
+    "loader-utils": "^2.0.2",
+    "webpack-sources": "^1.4.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.3",
+    "css-loader": "^5.2.7",
+    "memfs": "^3.4.1",
+    "mini-css-extract-plugin": "^1.6.2",
+    "react": "^17.0.2",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "webpack": "^5.66.0"
+  },
+  "peerDependencies": {
+    "webpack": ">= 4.46.0"
+  }
+}

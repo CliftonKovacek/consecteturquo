@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.options.json",
+  "compilerOptions": {
+    "outDir": "dist/esm",
+    "tsBuildInfoFile": "tsconfig.esm.tsbuildinfo"
+  },
+  "references": [{ "path": "../benchmark" }, { "path": "../jest" }]
+}

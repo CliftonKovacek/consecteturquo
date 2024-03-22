@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "group:monorepos",
+    "group:recommended",
+    "group:definitelyTyped",
+    "schedule:earlyMondays"
+  ],
+  "dependencyDashboard": true,
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "branchConcurrentLimit": 6,
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "postUpgradeTasks": {
+    "commands": ["yarn changeset --empty"],
+    "fileFilters": [".changeset/*", "yarn.lock"]
+  },
+  "packageRules": [
+    {
+      "managers": ["npm"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "managers": ["nvm"],
+      "automerge": true
+    },
+    {
+      "updateTypes": ["lockFileMaintenance"],
+      "automerge": true
+    },
+    {
+      "extends": ["group:postcss", "schedule:weekly"],
+      "packagePatterns": ["^postcss-", "^autoprefixer", "^cssnano"],
+      "groupName": "postcss packages"
+    },
+    {
+      "packagePatterns": ["^@storybook"],
+      "groupName": "storybook packages"
+    },
+    {
+      "packagePatterns": ["webpack", "-loader", "webpack-plugin"],
+      "groupName": "webpack packages"
+    },
+    {
+      "packagePatterns": ["^parcel", "^@parcel"],
+      "groupName": "parcel packages"
+    },
+    {
+      "depTypeList": ["peerDependencies"],
+      "rangeStrategy": "widen"
+    },
+    {
+      "extends": ["packages:eslint", "schedule:monthly"],
+      "groupName": "eslint packages"
+    },
+    {
+      "packagePatterns": ["^@?size-limit"],
+      "groupName": "size-limit packages"
+    }
+  ]
+}
